@@ -35,7 +35,8 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link sidebar-link text-white-50 rounded-4 px-3 py-2 d-flex align-items-center gap-2">
+                <!-- ENLACE DE CLIENTES CONECTADO -->
+                <a href="{{ route('customers.index') }}" class="nav-link sidebar-link text-white-50 rounded-4 px-3 py-2 d-flex align-items-center gap-2 {{ request()->is('customers*') ? 'active_item' : '' }}">
                     <i class="bi bi-people fs-6"></i><span class="small fw-medium">Clientes</span>
                 </a>
             </li>
@@ -50,7 +51,8 @@
         <p class="sidebar-section-title text-white-50 text-uppercase fw-semibold px-3 mb-2 mt-3">Configuraciones</p>
         <ul class="nav flex-column gap-1">
             <li class="nav-item">
-                <a href="#" class="nav-link sidebar-link text-white-50 rounded-4 px-3 py-2 d-flex align-items-center gap-2">
+                <!-- ENLACE DE ROLES CONECTADO -->
+                <a href="{{ route('roles.index') }}" class="nav-link sidebar-link text-white-50 rounded-4 px-3 py-2 d-flex align-items-center gap-2 {{ request()->is('roles*') ? 'active_item' : '' }}">
                     <i class="bi bi-shield fs-6"></i><span class="small fw-medium">Roles</span>
                 </a>
             </li>

@@ -1,19 +1,20 @@
 @extends('template.administrador')
-@section('title', 'Editar categoría')
-@section('name_section', 'Editar categoría')
-@section('description', 'Modificar los datos de la categoría')
+
+@section('title', 'Editar Rol')
+@section('name_section', 'Editar Rol')
+@section('description', 'Modificar los datos del rol')
 @section('item_section', 'Inicio')
-@section('section', 'Categorías')
-@section('module', 'Editar categoría')
+@section('section', 'Configuraciones')
+@section('module', 'Editar Rol')
 
 @section('content')
-<div class="card border-0 shadow-sm mt-4" style="max-width: 640px;">
-    <form action="{{ route('categories.update', $category) }}" method="POST" class="card-body">
+<div class="card shadow-sm border-5 border-top border-secondary mt-4" style="max-width: 640px;">
+    <form action="{{ route('roles.update', $role) }}" method="POST" class="card-body">
         @csrf
         @method('PUT')
-        @include('settings.categories.form')
+        @include('settings.roles.form')
         <button type="submit" class="btn btn-danger">Actualizar</button>
-        <a href="{{ route('categories.index') }}" class="btn btn-outline-secondary">Cancelar</a>
+        <a href="{{ route('roles.index') }}" class="btn btn-outline-secondary">Cancelar</a>
     </form>
 </div>
 @endsection
