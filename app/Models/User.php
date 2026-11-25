@@ -36,4 +36,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Sale::class);
     }
+
+    public function hasRole(string $roleName): bool
+    {
+        return $this->role && $this->role->name === $roleName;
+    }
+
+    public function hasAnyRole(array $roleNames): bool
+    {
+        return $this->role && in_array($this->role->name, $roleNames, true);
+    }
 }
